@@ -1,0 +1,111 @@
+    <div class="container-fluid content">
+        <ul class="breadcrumb m-t-10">
+            <li><i class="icon-home"></i>&nbsp;&nbsp;您现在所在位置：<a href="/" style="color:blue">首页</a> <span class="divider">></span></li>
+            <li><span>兑换商品</span><span class="divider">></span></li>
+            <li><span>商品管理</span><span class="divider">></span></li>
+            <li><span>新增商品</span></li>
+        </ul>
+
+        <form class="form-horizontal" method="/goods/add">
+            <div class="control-group">
+                <label class="control-label" for="giftBagName">商品类型：</label>
+                <div class="controls">
+                    <label class="radio">
+                        <input class="j_goodsType" value="1" type="radio" name="type" checked>
+                        喜地商品
+                    </label>
+                    <label class="radio" style="margin-left: 10px !important;">
+                        <input class="j_goodsType" value="2" type="radio" name="type">
+                        非喜地商品
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">喜地商品货号：</label>
+                <div class="controls">
+                    <input class="j_check j_goodNum" type="text" name="xidiSku" placeholder="请输入商品货号">
+                    <span class="error"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class ="control-label">商品名称：</label>
+                <div class="controls">
+                    <input class="j_check j_goodsName" type="text" name="goodsName" placeholder="请输入商品名称">
+                    <span class="error"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品价格：</label>
+                <div class="controls">
+                    <input class="j_check j_goodsPrice" type="text" name="goodsPrice" placeholder="请输入商品价格">
+                    <span class="error"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品主图：</label>
+                <div class="controls upload-wrap">
+                    <span class="text">图片仅支持JPG,PNG,JPEG格式。图片大小不超过2M。</span>
+                    <div class="upload-box j_uploadBox">
+                        <div class="imgShow j_imgShow">
+                            <img class="j_mainImg" src="">
+                            <span class="desc">图片显示区域</span>
+                        </div>
+                        <div class="upload-ctrl">
+                            <div class="btn j_uploadBtn">选择图片
+                                <input type="hidden" name="mainImg" class="j_uploadInput">
+                            </div>
+                            <p class="error"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品展示图：</label>
+                <div class="controls upload-wrap">
+                    <span class="text">图片仅支持JPG,PNG,JPEG格式。图片大小不超过2M。</span>
+                    <div class="upload-box j_showImgwrap">
+                        <div class="uploadItem j_uploadBox j_uploadItem">
+                            <div class="imgShow j_imgShow">
+                                <img class="j_itemImg" src="">
+                                <span class="desc">图片显示区域</span>
+                            </div>
+                            <div class="upload-ctrl">
+                                <div class="btn j_uploadBtn">选择图片
+                                    <input type="hidden" name="showImg" class="j_uploadInput">
+                                </div>
+                                <div class="btn hide">删除</div>
+                                <p class="error"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="addBtn j_addBtn">+新增商品展示图模块</div>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">商品描述：</label>
+                <div class="controls">
+                    <!-- <div class="text">我是富文本编辑器</div> -->
+                    <div id="editor" class="editor"></div>
+                    <p class="error m-t-10"></p>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <input id="submitUrl" type="hidden" name="" value="/goods/add">
+                    <button type="button" class="btn btn-large btn-default j_submit">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+<form id="imageUpload" action="/goods/uploadpic" target="upload_frame" method="post" enctype="multipart/form-data" style="display: none">
+    <input type="hidden" name="<?php echo $this->security->getTokenKey();?>" value="<?php echo $this->security->getToken();?>" />
+    <input type="file" id="picture" name="imgFile" />
+    <input type="hidden" id="module" name="module" value="banner" />
+    <input type="hidden" id="callback" name="callback" value="upCallBack" />
+</form>
+<iframe src="" id="upload_frame" name="upload_frame" style="display: none"></iframe>
+
+<script src="/media/editor/wangEditor.min.js"></script>
+<script src="/static/js/newgoods.js"></script>

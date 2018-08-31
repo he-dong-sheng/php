@@ -1,0 +1,140 @@
+/*(common*/
+.p-0 {padding: 0px !important;}
+.p-20 {padding: 20px !important;}
+.p-30 {padding: 30px !important;}
+.p-t-0 {padding-top: 0px !important;}
+.p-t-10 {padding-top: 10px !important;}
+.p-b-10 {padding-bottom: 10px !important;}
+.m-0 {margin: 0px !important;}
+.m-r-5 {margin-right: 5px !important;}
+.m-r-10 {margin-right: 10px !important;}
+.m-r-15 {margin-right: 15px !important;}
+.m-l-10 {margin-left: 10px !important;}
+.m-l-15 {margin-left: 15px !important;}
+.m-t-0 {margin-top: 0px !important;}
+.m-t-5 {margin-top: 5px !important;}
+.m-t-10 {margin-top: 10px !important;}
+.m-t-15 {margin-top: 15px !important;}
+.m-t-20 {margin-top: 20px !important;}
+.m-t-30 {margin-top: 30px !important;}
+.m-t-40 {margin-top: 40px !important;}
+.m-b-0 {margin-bottom: 0px !important;}
+.m-b-5 {margin-bottom: 5px !important;}
+.m-b-10 {margin-bottom: 10px !important;}
+.m-b-15 {margin-bottom: 15px !important;}
+.m-b-20 {margin-bottom: 20px !important;}
+.m-b-30 {margin-bottom: 30px !important;}
+.min-w-100 {min-width: 100px;}
+
+.bg1{background-color: #f2f2f2;}
+
+.align-b {vertical-align: bottom;}
+.inline-block {
+	display: inline-block;
+}
+.error {
+	color: red;
+}
+li {list-style: none;}
+/*common)*/
+/*(bootstrap reset*/
+.modal {
+	width: auto;
+	min-width: 500px;
+}
+.modal .btn:hover{
+	background-color: #d8d8d8 !important;
+}
+textarea {
+	width: auto;
+}
+select {
+	width: auto;
+}
+
+/*bootstrap reset)*/
+
+/*(上传图片*/
+.upload-wrap .addBtn{
+	width: 480px;
+	margin-top: 20px;
+	padding: 10px;
+	text-align: center;
+	background-color: #e5e5e5;
+	cursor: pointer;
+}
+.upload-wrap .addBtn:hover{
+	background-color: #d8d8d8;
+
+}
+.upload-box {
+	margin-top: 20px;
+}
+.upload-box:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.upload-wrap .imgShow{
+	float: left;
+	width: 500px;
+	height: 300px;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+.upload-wrap .imgShow .desc{
+	display: block;
+	/*height: 100%;*/
+	line-height: 300px;
+	color: #ccc;
+}
+.upload-wrap img{
+	display: none;
+	height: 100%;
+}
+.upload-wrap .upload-ctrl{
+	float: left;
+	margin-left: 20px;
+}
+.upload-wrap .upload-ctrl .error{
+	margin-top: 10px;
+}
+
+.uploadItem {
+	margin-bottom: 20px;
+}
+.uploadItem:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#imageUpload {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#imageUpload #picture {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+/*上传图片)*/
+
+/*新增商品*/
+.editor {
+	width: 400px;
+	/*height: 300px;*/
+}
+
+/*富文本编辑器*/
+.w-e-toolbar {
+	border: none !important;
+	border-top: 1px solid #ccc !important;
+}
+
+#address .modal-body {text-align: left; overflow-y: inherit;}
+#iWarning .modal-header, #iAlert .modal-header{border-bottom: none;}
+#iWarning .modal-header .close, #iAlert .modal-header .close{margin-top: 2px;}
+#iWarning .modal-body .msg{text-align: center;font-size:20px;font-weight:700;}

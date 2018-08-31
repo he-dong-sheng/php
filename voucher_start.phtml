@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>新增礼品包-礼品兑换券管理后台</title>
+	<link href="../../public/media/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../public/media/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="../../public/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/media/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <link href="../../public/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="../../public/media/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/media/css/common-module.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link rel="stylesheet" type="text/css" href="../../public/static/css/giftwxapp.css">
+    <script src="../../public/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="../../public/media/js/jquery.dotdotdot.js"></script>
+    <script src="../../public/media/js/bootstrap.min.js"></script>
+    <script src="../../public/media/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../public/media/js/nice-validator/jquery.validator.js?local=zh-CN"></script>
+    <script src="../../public/media/js-ext/common.js" type="text/javascript"></script>
+    <script src="../../public/media/js/common-module.js" type="text/javascript"></script>
+    <style> * { font-family: "arial", "微软雅黑"; } </style>
+</head>
+<body class="page-header-fixed page-sidebar-fixed">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="/index" style="padding-left: 10px;">
+                    <i class="icon-truck"></i>礼品兑换券管理后台</a>
+                <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <img src="../../public/media/image/menu-toggler.png" alt="" /></a>
+                <ul class="nav pull-right" style="margin-right: 10px;">
+                    <li>
+                        <a href="javascript:void(0)">您好，亲爱的宋志辉</a></li>
+                    <li>
+                        <a href="/index/pLogout">退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page-container">
+        <div class="page-sidebar nav-collapse collapse">
+            <ul class="page-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="icon-folder-close"></i>
+                        <span class="arrow"></span>兑换商品
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a class="" href="/">
+                                <i class="icon-file"></i>礼品包管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="page-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="icon-folder-close"></i>
+                        <span class="arrow"></span>兑换券管理</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a class="" href="./voucher_start.html">
+                                <i class="icon-file"></i>兑换券发行</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="/ticket/list">
+                                <i class="icon-file"></i>兑换券列表</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="page-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="icon-folder-close"></i>
+                        <span class="arrow"></span>兑换信息</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a class="" href="/">
+                                <i class="icon-file"></i>兑换信息详情</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="/">
+                                <i class="icon-file"></i>兑换信息列表</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="page-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="icon-folder-close"></i>
+                        <span class="arrow"></span>权限管理</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a class="" href="/user/index">
+                                <i class="icon-file"></i>用户管理</a>
+                        </li>
+                        <li class="">
+                            <a class="" href="/group/index">
+                                <i class="icon-file"></i>角色管理</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="page-sidebar-menu">
+                <li>
+                    <a href="javascript:void(0)">
+                        <i class="icon-folder-close"></i>
+                        <span class="arrow"></span>系统管理</a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a class="" href="/system/index">
+                                <i class="icon-file"></i>操作日志</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="page-content" style="min-height: 680px;">
+            <div class="container-fluid content">
+                <ul class="breadcrumb m-t-10">
+                    <li><i class="icon-home"></i>&nbsp;&nbsp;您现在所在的位置：<a href="/">首页</a> <span class="divider">/</span></li>
+                    <li><a href="#">兑换券管理</a> <span class="divider">/</span></li>
+                    <li class="active">发行兑换券</li>
+                </ul>
+
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="voucherName">兑换券名称：</label>
+                        <div class="controls">
+                            <input id="voucherName" name="voucherName" type="text" placeholder="请输入礼品包名称">
+                            <sapn class="m-l-10 error"></sapn>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="gift_bagID">礼品包ID：</label>
+                        <div class="controls">
+                            <input id="gift_bagID" name="gift_bagID" type="text" placeholder="请输入礼品包ID">
+                            <a class="m-l-10" href="#">礼品包列表</a>
+                            <sapn class="m-l-10 error">报错位置</sapn>
+                        </div>
+                        <div class="controls p-20 m-t-10 bg1">
+                            <p>礼品包名称：<span>288型礼品包</span></p>
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>商品ID</th>
+                                        <th>喜地商品货号</th>
+                                        <th>商品名称</th>
+                                        <th>商品类型</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>P0001</td>
+                                        <td>--</td>
+                                        <td>西班牙原产JOVI无尘粉笔画笔100支装 通色  通码</td>
+                                        <td>非喜地商品</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P0001</td>
+                                        <td>--</td>
+                                        <td>西班牙原产JOVI无尘粉笔画笔100支装 通色  通码</td>
+                                        <td>非喜地商品</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="voucherNum">发行数量：</label>
+                        <div class="controls">
+                            <input id="voucherNum" name="voucherNum" type="text" placeholder="请输入发行数量">
+                            <sapn class="m-l-10 error"></sapn>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">兑换日期：</label>
+                        <div class="controls">
+                            <input id="sdate" class="datetime" type="text" value="2018-8-18">
+                            <span>至</span>
+                            <input id="edate" class="datetime" type="text" value="2018-8-18">
+                            <sapn class="m-l-10 error"></sapn>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="button" class="btn btn-large btn-default j_submit">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="background-color: #000; margin-left: 0; ">
+        <div class="footer-inner">2018 © Market by Xidibuy.</div>
+        <div class="footer-tools"></div>
+    </div>
+
+    <script src="../../public/media/js/app-sidebar.js"></script>
+    <script src="../../public/static/js/voucher_start.js"></script>
+</body>
+</html>
